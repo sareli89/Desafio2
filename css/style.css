@@ -3,4 +3,12 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'sohne';
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://glyph.medium.com/font/b492c44/3k-4f_4h-52_54-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/sohne-400-normal.woff") format("woff");
+  unicode-range: U+80-9F,U+A1-B6,U+B8-2009,U+200B-2013,U+2015-2017,U+201A-201B,U+201E-2021,U+2023-2025,U+2027-10FFFF;
+}
 /*# sourceMappingURL=style.css.map */
