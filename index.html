@@ -4,13 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Medium</title>
 </head>
 <body>
-    <div class="container-fluid col-sm-12 col-md-9">
-        <header>
+    <nav></nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <article class="card">
+                   <div class="row flex-row flex-md-row-reverse">
+                       <div class="col">
+                           <img src="" alt="">
+                       </div>
+                       <div class="col">
+                           <p></p>
+                       </div>
+                   </div>
+                </article>
+                <article class="card">
+                    <h1></h1>
+                    <p></p>
+                </article>
+                <article class="card">
+                    <h1></h1>
+                    <p></p>
+                </article>
+            </div>
+            <div class="col-12 col-md-3 d-none d-md-block">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <header class="container col-md-9">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +119,7 @@
                 <div class="col-4"><img src="" alt=""></div>
                 <div class="alert alert-secondary" role="alert">
                 Share your ideas with millions of readers.
-                <button class="btn rounded-pill">Write on Medium</button>
+                <button class="btn rounded-pill btn-dark alert-btn">Write on Medium</button>
                 </div>
                 <div class="col-8">
                     <img src="" alt="">
@@ -131,35 +166,37 @@
             </div>
         </main>
     </div>
-    <div class="container-fluid col-md-3">
-        <aside>
+    <div class="container-fluid">
+        <aside class="container col-md-3">
             <div class="container">
                 <div class="row twitter-section">
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                    <div class=" container row MT-section">
+                        <div class="row MT-icons">
+                            <img src="images/SVG/Medium_Symbol_NoPadding.svg" alt="Medium icon">
+                            <img src="" alt="Plus icon">
+                            <img src="images/twitter.jpeg" alt="Twitter icon">
                         </div>
-                        <div>
+                        <div class="twitter-text">
                             <p>Discover Medium writers you already follow on Twitter.</p>
-                            <button class="btn rounded-pill"> Connect to Twittet</button>
-                            <button class="btn ">Maybe Latter</button>
+                            <button class="btn btn-outline-secondary rounded-pill"> Connect to Twittet</button>
+                            <button class="btn btn-link"><u>Maybe Latter</u></button>
                         </div>
                     </div>
                     <div class="row topics-section">
                         <h2>Recommended topics</h2>
-                        <button class="btn rounded-pill">Technology</button>
-                        <button class="btn rounded-pill">Money</button>
-                        <button class="btn rounded-pill">Bussines</button>
-                        <button class="btn rounded-pill">Productivity</button>
-                        <button class="btn rounded-pill">Psychology</button>
-                        <button class="btn rounded-pill">Mindfulness</button>
-                        <button class="btn rounded-pill">Art</button>
+                        <div class="d-flex flex-wrap topics-tbns">
+                            <button class="btn rounded-pill">Technology</button>
+                            <button class="btn rounded-pill">Money</button>
+                            <button class="btn rounded-pill">Bussines</button>
+                            <button class="btn rounded-pill">Productivity</button>
+                            <button class="btn rounded-pill">Psychology</button>
+                            <button class="btn rounded-pill">Mindfulness</button>
+                            <button class="btn rounded-pill">Art</button>
+                        </div> 
                     </div>
-                    <div class="row follow-section">
+                    <div class=" follow-section  .flex-column">
                         <h2>Who to follow</h2>
-                        <div class="card-group">
+                        <div class="card-group follow-group .flex-column">
                             <div class="card">
                               <img class="card-img-top" src="https://picsum.photos/200" alt="Card image cap">
                               <div class="card-body">
