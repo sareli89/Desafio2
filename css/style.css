@@ -13,9 +13,16 @@
 }
 
 /* Web section */
-.twitter-section .MT-section .MT-icons img {
-  height: 50px;
-  width: 50px;
+.icon {
+  margin: 0 15px;
+}
+
+.fas {
+  margin: 15px 0;
+}
+
+.fab {
+  margin: 15px 15px;
 }
 
 .twitter-section .MT-section .twitter-text p {
