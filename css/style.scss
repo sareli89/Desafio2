@@ -1,3 +1,7 @@
+$black: rgb(8, 8, 8);
+$gray: rgb(141, 138, 138);
+$white: rgb(255, 255, 255);
+
 * {
     font-family: 'sohne';
     font-weight: 400;
@@ -9,4 +13,44 @@
     font-style: normal;
     src: url('https://glyph.medium.com/font/b492c44/3k-4f_4h-52_54-6bt_6bv-6c3_6c5-6c7_6ca-6cb_6ce-6ch_6cj-6cl_6cn-nvnj/sohne-400-normal.woff') format('woff');
     unicode-range: U+80-9F,U+A1-B6,U+B8-2009,U+200B-2013,U+2015-2017,U+201A-201B,U+201E-2021,U+2023-2025,U+2027-10FFFF;
+}
+
+
+/* Web section */
+
+.icon {
+    margin: 0 15px;
+}
+.fas {
+    margin: 15px 0;
+}
+.fab{
+    margin: 15px 15px;
+}
+.twitter-section{
+    .MT-section{
+        
+       .twitter-text {
+           p {
+               text-align: center;
+               color: $gray;
+               font-weight: 400;
+           }
+           button {
+               background-color: transparent;
+               border: 1px solid $gray;
+           }
+       } 
+    } 
+    .topics-section {
+        h2{
+            width: 50%;
+        }
+        .topics-btns {
+            width: auto;
+            color: grey;
+            background-color: lightgray;
+            font-weight: 600;
+        }
+    }
 }
