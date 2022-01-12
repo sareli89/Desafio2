@@ -14,7 +14,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
             </div>
             <div class="row flex-row flex-md-row-reverse">
             <div class="col-md-4">
-                <img src="${urlImage}" class="" alt="...">
+                <img width="100" height="100" src="${urlImage}" class="" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
