@@ -1,0 +1,46 @@
+$.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) => {
+    let template = ''
+    for(post in listpost) {
+        let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
+        template += `
+        <article class="card border-bottom-0 border-top-0">
+            <div class="d-flex flex-row bd-highlight">
+                <div class="d-flex flex-row">
+                    <img width="20" height="20"src="${urlImageAuthor}" alt="Autor Image"    class="rounded-pill">
+                </div>
+                <div class="d-flex flex-row">
+                    <h6>${author}</h6>
+                </div>
+            </div>
+            <div class="row flex-row flex-md-row-reverse">
+            <div class="col-md-4">
+                <img width="100" height="100" src="${urlImage}" class="" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h2>${title}</h2>
+                <p class="card-text overflow-auto text-muted">${resume.substring(0,250)}...</p>
+                <ul class="list-inline">                    
+                    <li class="list-inline-item text-muted">${date}</li>
+                    <li class="list-inline-item text-muted">${timetoread}</li>
+                    <li class="list-inline-item bg rounded-pill p-2 text-muted">${tag}</li>
+                    <li class="list-inline-item text-muted">Selected For You.</li>
+                    <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
+                        <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
+                    </button>
+                    <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
+                        <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
+                    </button>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </article>
+        `
+    }
+    $('.cards_list').html(template)
+})
+
+$('.back_button').click(() =>{
+    location.replace('http://127.0.0.1:5500/')
+})
