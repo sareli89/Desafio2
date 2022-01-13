@@ -32,7 +32,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                 </div>
             </div>
             <div class="col-4">
-                <a href="" style="background-image: url('${urlImage}');" class="img-post"></a>
+                <a href="article.html?idpost=${post}" style="background-image: url('${urlImage}');" class="img-post"></a>
             </div>
             </div>
         </article>
