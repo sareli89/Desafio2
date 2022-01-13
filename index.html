@@ -12,260 +12,54 @@
     <title>Medium</title>
 </head>
 <body>
-    <nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/PNG/RGB/Medium-Symbol-Black-RGB@1x.png" width="50" class="icon med-icon" alt="">
-                Medium
-            </a>
-            <form class="d-flex  flex-row-reverse ">
-                <button class="btn" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                    </svg>
-                    
-                </button>
-                <button class="btn" type="submit" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-bookmarks" viewBox="0 0 16 16">
-                      <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/>
-                       <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/>
-                    </svg>
-                 </button>
-    
-                <button class="btn" type="submit">
-                    <i class="fas fa-search" width="50"></i>
-                </button>
-             </form>
-             <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://picsum.photos/id/237/200/300" alt="" width="40" height="40" class="rounded-circle">
-              </button>
-                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Write a story</a></li>
-                      <li><a class="dropdown-item" href="#">stats</a></li>
-                      <li><a class="dropdown-item" href="#">settings</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">publication</a></li>
-                   </ul>
-            
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/images/PNG/CMYK/Medium-Symbol-Black-CMYK@1x.png" width="20px" height="20" class="" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="rounded-circle"><img width="50" height="50"src="https://picsum.photos/id/1082/100/100" alt=""    class="rounded-pill"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8">
 
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs border-bottom border-1 pt-4" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="following" aria-selected="true">FOLLOWING</button>
+                    <button class="nav-link active border-0 mx-4" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="following" aria-selected="true">Following</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="recomend" aria-selected="false">RECOMENDED FOR YOU</button>
+                    <button class="nav-link border-0 mx-4" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="recomend" aria-selected="false">Recommended</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="following-tab">FOLLOWING</div>
-                    <!--<div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="recomend-tab">RECOMENDED FOR YOU</div>-->
+                    
                 </div>
 
-                <article class="card">
-                    <div class="d-flex flex-row bd-highlight">
-                        <div class="d-flex flex-row">
-                            <img width="20" height="20"src="https://picsum.photos/id/1082/100/100" alt=""    class="rounded-pill">
-                        </div>
-                        <div class="d-flex flex-row">
-                            <h6>Johanas Altan</h6>
-                        </div>
-                    </div>
-                    <div class="row flex-row flex-md-row-reverse">
-                        <div class="col-md-4">
-                          <img src="https://picsum.photos/id/1073/100/100" class="" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h2 class="card-title"><link rel="stylesheet" href="article.html"> 5 More Books That Changed My Life</h2>
-                            <p class="card-text text-muted">In July I decided to write one post a day. Which one resonated most? 10 Books that Changed My Life.</p>
-                            <ul class="list-inline">                    
-                                <li class="list-inline-item text-muted">Nov 8</li>
-                                <li class="list-inline-item text-muted">5 min read</li>
-                                <li class="list-inline-item text-muted">Books.</li>
-                                <li class="list-inline-item text-muted">Selected For You.</li>
-                                <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                    <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                </button>
-                                <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                    <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                </button>
-                              </ul>
-                          </div>
-                        </div>
-                      </div>
-                </article>
-                <article class="card">
-                    <div class="d-flex flex-row bd-highlight">
-                        <div class="d-flex flex-row">
-                            <img width="20" height="20"src="https://picsum.photos/id/1008/100/100" alt=""    class="rounded-pill">
-                        </div>
-                        <div class="d-flex flex-row">
-                            <h6>Samantha Costa</h6>
-                        </div>
-                    </div>
-                    <div class="row flex-row flex-md-row-reverse">
-                        <div class="col-md-4">
-                          <img src="https://picsum.photos/id/103/100/100" class="" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h2 class="card-title">10 More Books to get in love</h2>
-                            <p class="card-text text-muted">In July I decided to write one post a day. Which one resonated most? 10 Books that Changed My Life.</p>
-                            <ul class="list-inline">                    
-                                <li class="list-inline-item text-muted">Nov 8</li>
-                                <li class="list-inline-item text-muted">5 min read</li>
-                                <li class="list-inline-item text-muted">Books.</li>
-                                <li class="list-inline-item text-muted">Selected For You.</li>
-                                <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                    <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                </button>
-                                <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                    <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                </button>
-                              </ul>
-                          </div>
-                        </div>
-                      </div>
-                </article>
-                 <article class="card">
-                     <div class="d-flex flex-row bd-highlight">
-                         <div class="d-flex flex-row">
-                             <img width="20" height="20"src="https://picsum.photos/id/1009/100/100" alt=""    class="rounded-pill">
-                         </div>
-                         <div class="d-flex flex-row">
-                             <h6>Jonas Altman</h6>
-                         </div>
-                     </div>
-                     <div class="row flex-row flex-md-row-reverse">
-                         <div class="col-md-4">
-                           <img src="https://picsum.photos/id/1029/100/100" class="" alt="...">
-                         </div>
-                         <div class="col-md-8">
-                           <div class="card-body">
-                             <h2 class="card-title">Change Your Life</h2>
-                             <p class="card-text text-muted">In July I decided to write one post a day. Which one resonated most? 10 Books that Changed My Life.</p>
-                             <ul class="list-inline">                    
-                                 <li class="list-inline-item text-muted">Nov 8</li>
-                                 <li class="list-inline-item text-muted">5 min read</li>
-                                 <li class="list-inline-item text-muted">Books.</li>
-                                 <li class="list-inline-item text-muted">Selected For You.</li>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                 </button>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                 </button>
-                               </ul>
-                           </div>
-                         </div>
-                       </div>
-                 </article>
-                 <article class="card">
-                     <div class="d-flex flex-row bd-highlight">
-                         <div class="d-flex flex-row">
-                             <img width="20" height="20"src="https://picsum.photos/id/1003/100/100                             " alt=""    class="rounded-pill">
-                         </div>
-                         <div class="d-flex flex-row">
-                             <h6>Teronie Donaldson</h6>
-                         </div>
-                     </div>
-                     <div class="row flex-row flex-md-row-reverse">
-                         <div class="col-md-4">
-                           <img src="https://picsum.photos/id/1035/100/100" class="" alt="...">
-                         </div>
-                         <div class="col-md-8">
-                           <div class="card-body">
-                             <h2 class="card-title">Here Is What to Do if You Want to Understand a Topic Better.</h2>
-                             <p class="card-text text-muted">“The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to…</p>
-                             <ul class="list-inline">                    
-                                 <li class="list-inline-item text-muted">Nov 5</li>
-                                 <li class="list-inline-item text-muted">4 min read</li>
-                                 <li class="list-inline-item text-muted">Reading</li>
-                                 <li class="list-inline-item text-muted">Selected For You</li>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                 </button>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                 </button>
-                               </ul>
-                           </div>
-                         </div>
-                       </div>
-                 </article>
-                 <article class="card">
-                     <div class="d-flex flex-row bd-highlight">
-                         <div class="d-flex flex-row">
-                             <img width="20" height="20" src="https://picsum.photos/id/1011/100/100" alt=""    class="rounded-pill">
-                         </div>
-                         <div class="d-flex flex-row">
-                             <h6>John Louise</h6>
-                         </div>
-                     </div>
-                     <div class="row flex-row flex-md-row-reverse">
-                         <div class="col-md-4">
-                           <img src="https://picsum.photos/id/1033/100/100" class="" alt="...">
-                         </div>
-                         <div class="col-md-8">
-                           <div class="card-body">
-                             <h2 class="card-title">Top Best Recommended Books to Master Data Science 2021</h2>
-                             <p class="card-text text-muted">Data Science is one of the most sought after field. To begin and to reach the level of a Senior Data Scientist requires time and effort…</p>
-                             <ul class="list-inline">                    
-                                 <li class="list-inline-item text-muted">Oct 10</li>
-                                 <li class="list-inline-item text-muted">6 min read</li>
-                                 <li class="list-inline-item text-muted">Self Improvement</li>
-                                 <li class="list-inline-item text-muted">Selected For You</li>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                 </button>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                 </button>
-                               </ul>
-                           </div>
-                         </div>
-                       </div>
-                 </article>
-                 <article class="card">
-                     <div class="d-flex flex-row bd-highlight">
-                         <div class="d-flex flex-row">
-                             <img width="20" height="20"src="https://picsum.photos/id/1015/100/100" alt=""    class="rounded-pill">
-                         </div>
-                         <div class="d-flex flex-row">
-                             <h6>Melissa Palt</h6>
-                         </div>
-                     </div>
-                     <div class="row flex-row flex-md-row-reverse">
-                         <div class="col-md-4">
-                           <img src="https://picsum.photos/id/1037/100/100" class="" alt="...">
-                         </div>
-                         <div class="col-md-8">
-                           <div class="card-body">
-                             <h2 class="card-title">Travel with less</h2>
-                             <p class="card-text text-muted">In July I decided to write one post a day. Which one resonated most? 10 Books that Changed My Life.</p>
-                             <ul class="list-inline">                    
-                                 <li class="list-inline-item text-muted">Nov 8</li>
-                                 <li class="list-inline-item text-muted">5 min read</li>
-                                 <li class="list-inline-item text-muted">Books.</li>
-                                 <li class="list-inline-item text-muted">Selected For You.</li>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
-                                 </button>
-                                 <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
-                                     <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
-                                 </button>
-                               </ul>
-                           </div>
-                         </div>
-                       </div>
-                 </article>
-                 
+                <div class="cards_list">
+                    <!-- aqui van articulos -->
+                </div>
+
+                
             </div>
             <div class="col-12 col-md-4 d-none d-md-block mh-100">
                 <div class="tw-section mt-5 me-2">
@@ -276,8 +70,8 @@
                     </div>
                     <div class="d-flex flex-column justify-content-center">
                         <p text-center mt-3>Discover Medium writers you already follow on Twitter.</p>
-                        <button class="btn btn-outline-secondary rounded-pill"> Connect to Twittet</button>
-                        <button class="btn btn-link"><u><i class="fab fa-twitter"></i> Maybe Latter</u></button>
+                        <button class="btn btn-outline-secondary rounded-pill" class="fab fa-twitter">  <i class="fab fa-twitter"></i> Connect to Twittet</button>
+                        <button class="btn btn-link"><u><i ></i> Maybe Latter</u></button>
                      </div>
                 </div>
                 <hr>
@@ -300,7 +94,7 @@
                             <img src="https://picsum.photos/id/1003/50/50
                             " class="img-fluid rounded-circle author-img mt-3" alt="Author">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 align-self-center">
                             <div class="card-body position-relative">
                                 <h5 class="card-title">Hunter Walk</h5>
                                 <p class="card-text"> <small>Investor, You'll find me @homebrew.</small></p>
@@ -311,7 +105,7 @@
                             <img src="https://picsum.photos/id/1005/50/50
                             " class="img-fluid rounded-circle author-img mt-3" alt="Author">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 align-self-center">
                             <div class="card-body position-relative">
                                 <h5 class="card-title">Ximena Vechea</h5>
                                 <p class="card-text"> <small> Author, Listen LIke You Mean It.</small></p>
@@ -322,7 +116,7 @@
                             <img src="https://picsum.photos/id/1003/50/50
                             " class="img-fluid rounded-circle author-img mt-3" alt="Author">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 align-self-center">
                             <div class="card-body position-relative">
                                 <h5 class="card-title">Cory Doctorrow</h5>
                                 <p class="card-text"> <small>Writter, Blogger, Avtivist</small></p>
@@ -337,20 +131,28 @@
                     <p><small>Click the <i class="far fa-bookmark" ></i> the icon on any story to easily add to your reading list or a custom list thta youcan share.</small></p>
                 </div>
                 <hr>
-                <div class="links-aside">
-                    <ul class="list-unstyled d-flex flex-column align-items-center">
-                        <li>Help</li>
-                        <li>Status</li>
-                        <li>Writters</li>
-                        <li>Blog</li>
-                        <li>Careers</li>
-                        <li>Privacy</li>
-                        <li>Terms</li>
-                        <li>About</li>
-                    </ul>
+                <div class=" container links-aside">
+                    <div class="row d-flex flex-row">
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Help</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Status</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Writters</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Blog</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Careers</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Privacy</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Terms</a>
+                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">About</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- <script src="/assets/js/addArticle.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    
+    <script src="/assets/js/postIndex.js"></script>
+
 </body>
 </html>

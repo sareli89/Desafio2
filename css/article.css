@@ -30,7 +30,12 @@ u {
   border-radius: 50%;
 }
 
-hr {
+.nav-text {
+  color: white;
+}
+
+.nav-hr {
   border: 1px solid grey;
 }
+
 /*# sourceMappingURL=article.css.map */
