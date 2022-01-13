@@ -3,7 +3,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
     for(post in listpost) {
         let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
         template += `
-        <article class="card border-bottom-0 border-top-0">
+        <article class="card border-0">
             <div class="d-flex flex-row bd-highlight">
                 <div class="d-flex flex-row">
                     <img width="20" height="20"src="${urlImageAuthor}" alt="Autor Image"    class="rounded-pill">
@@ -12,11 +12,8 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     <h6>${author}</h6>
                 </div>
             </div>
-            <div class="row flex-row flex-md-row-reverse">
-            <div class="col-md-4">
-                <img width="100" height="100" src="${urlImage}" class="" alt="...">
-            </div>
-            <div class="col-md-8">
+            <div class="row flex-row">
+            <div class="col-8">
                 <div class="card-body">
                 <h2>${title}</h2>
                 <p class="card-text overflow-auto text-muted">${resume.substring(0,250)}...</p>
@@ -33,6 +30,9 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     </button>
                     </ul>
                 </div>
+            </div>
+            <div class="col-4">
+                <a href="" style="background-image: url('${urlImage}');" class="img-post"></a>
             </div>
             </div>
         </article>
