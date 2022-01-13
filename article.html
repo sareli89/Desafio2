@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/742afecea1.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Medium</title>
+    <title class="title"></title>
+
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-mb navbar-light bg-light shadow align-items-center">
         <div class="container-fluid">
           <div class="d-flex bd-highlight mb-3">
@@ -81,112 +81,98 @@
           </div>
         </div>
     </nav>  
-    <!--fin nav-->
-   
-    <main class="container d-flex vh-100">
+    
+    
+
+    <div class="container container-cards mt-3">
         <div class="row">
-            <div class="col-12 col-md-8 border-end">
-                <ul class="nav nav-tabs border-bottom border-1 pt-4" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                    <button class="nav-link border-0 mx-4 fs-6" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="following" aria-selected="true">FOLLOWING</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                    <button class="nav-link active border-0 mx-4 fs-6 border-bottom border-dark fw-bold" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="recomend" aria-selected="false">RECOMMENDED FOR YOU</button>
-                    </li>
-                </ul>
-               
-                <div class="cards_list container-fluid ">
-                    <!-- aqui van articulos -->
+            
+            <div class="col-10 mx-auto">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="following-tab">FOLLOWING</div>
+                </div>
+                
+                <div class="card_article">
+                    
                 </div>
 
+            
             </div>
-            <aside class="col-4 d-none d-md-block as-secc">
-                <div class="tw-section d-flex flex-column align-items-center border-bottom">
-                    <div class="d-flex justify-content-center icons-container ps-5">
-                        <img src="/images/PNG/RGB/tw&logo.PNG" width="100" height="35" class="icon med-icon" alt="">
-                        
-                    </div>
-                    <div class="d-flex flex-column justify-content-center">
-                        <p class="text-center px-5">Discover Medium writers you already follow on Twitter.</p>
-                        <button class="twitter-btn btn btn-outline-secondary rounded-pill" class="fab fa-twitter"><img src="/images/PNG/twitter.PNG" width="25" height="25" alt=""> Connect to Twittet</button>
-                        <button class="btn btn-link"><a href="" class="mL-btn">Maibe Latter</a></button> 
-                     </div>
-                </div>
-                <div class="row topics-section">
-                    <h2>Recommended topics</h2>
-                    <div class="d-flex flex-wrap topics-tbns">
-                        <button class="btn btn-light rounded-pill">Technology</button>
-                        <button class="btn btn-light rounded-pill">Money</button>
-                        <button class="btn btn-light rounded-pill">Bussines</button>
-                        <button class="btn btn-light rounded-pill">Productivity</button>
-                        <button class="btn btn-light rounded-pill">Psychology</button>
-                        <button class="btn btn-light rounded-pill">Mindfulness</button>
-                        <button class="btn btn-light rounded-pill">Art</button>
-                    </div>
-                </div>
-                <hr>
-                <div class="recomend-cards">
-                    <div class="row g-0">
-                        <div class="col-md-3">
-                            <img src="https://picsum.photos/id/1003/50/50
-                            " class="img-fluid rounded-circle author-img mt-3" alt="Author">
-                        </div>
-                        <div class="col-md-8 align-self-center">
-                            <div class="card-body position-relative">
-                                <h5 class="card-title">Hunter Walk</h5>
-                                <p class="card-text"> <small>Investor, You'll find me @homebrew.</small></p>
-                                <button class="btn btn-outline-secondary rounded-pill position-absolute top-50 start-100 translate-middle">Follow</button>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <img src="https://picsum.photos/id/1005/50/50
-                            " class="img-fluid rounded-circle author-img mt-3" alt="Author">
-                        </div>
-                        <div class="col-md-8 align-self-center">
-                            <div class="card-body position-relative">
-                                <h5 class="card-title">Ximena Vechea</h5>
-                                <p class="card-text"> <small> Author, Listen LIke You Mean It.</small></p>
-                                <button class="btn btn-outline-secondary rounded-pill position-absolute top-50 start-100 translate-middle">Follow</button>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <img src="https://picsum.photos/id/1003/50/50
-                            " class="img-fluid rounded-circle author-img mt-3" alt="Author">
-                        </div>
-                        <div class="col-md-8 align-self-center">
-                            <div class="card-body position-relative">
-                                <h5 class="card-title">Cory Doctorrow</h5>
-                                <p class="card-text"> <small>Writter, Blogger, Avtivist</small></p>
-                                <button class="btn btn-outline-secondary rounded-pill position-absolute top-50 start-100 translate-middle">Follow</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="reading-list">
-                    <h2>Reading list</h2>
-                    <p><small>Click the <i class="far fa-bookmark" ></i> the icon on any story to easily add to your reading list or a custom list thta youcan share.</small></p>
-                </div>
-                <hr>
-                <div class=" container links-aside">
-                    <div class="row d-flex flex-row">
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Help</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Status</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Writters</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Blog</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Careers</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Privacy</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">Terms</a>
-                        <a href="" class="mx-2 col-2 text-decoration-none text-secondary fs-0">About</a>
-                    </div>
-                </div>
-            </aside>
-        </div>
-    </main>
+
+   
+    <footer class="bg-dark text-white text-center text-md-start" ">
+
+    <div class="container p-3">
+         
+        <div class="row">
+        
+            <div class="col-lg-4 d-none d-md-inline d-xs-none mb-4 mb-md-0">
+                <h5 class="text">Learn more</h5>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                <p>
+                    Medium is an open platform where 170 million readers come to find insightfull 
+                    and dynamic thinking. Here, expert and undiscovered voices alike dive into the 
+                    heart of any topic and bring new ideas to the surface. <a><u class="u-nav">Learn more</u></a>
+                </p>
+            </div>
+        
+            <div class="col-lg-4 d-none d-md-inline d-xs-none mb-4 mb-md-0">
+                <h5 class="text">Make Medium yours</h5>
+                <p>
+                    Follow the writers, publications, and topics that matther to you, and you;ll see 
+                    them on your homepage and in your inbox.  <a><u class="u-nav">Explore</u></a>
+                </p>
+                
+            </div>
+        
+            <div class="col-12 col-lg-4 d-none d-md-inline d-xs-none mb-4 mb-md-0">
+                <h5 class="text">Make Medium yours</h5>
+                <p>
+                    If you have to tell, knowledge to share, or a perspective to offer - welcome home. 
+                    It’s easy and free to post your thinking on any topic.  <a><u class="u-nav">Start a blog</u></a>
+                </p>
+                
+            </div>
+
+        </div>
+        <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col  d-flex justify-content-between bg-dark p-3" >
+                    
+                    <a class="text-white" href=""><img src="/images/PNG/RGB/Medium-Logo-White-RGB@1x.png" alt="medium logo" width="100px"></a>
+                    
+                    <ul class="navbar-nav list-group list-group-horizontal">
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">About</a>
+                        </li>
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link text-light" href="#">Write</a>
+                        </li>
+                        <li class="nav-item list-inline-item">
+                            <a class="nav-link text-light" href="#">Help</a>
+                        </li>
+                        <li class="nav-itemlist-inline-item">
+                            <a class="nav-link text-light" href="#">Legal</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+            
+        <div>
+        
+    </div>
+    
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="/assets/js/postIndex.js"></script>
+    <script src="/assets/js/article.js"></script>
+
+
 </body>
 </html>
