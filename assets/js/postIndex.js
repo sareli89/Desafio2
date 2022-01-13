@@ -12,14 +12,14 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     <h6>${author}</h6>
                 </div>
             </div>
-            <div class="row flex-row flex-md-row-reverse">
+            <div class="row flex-row align-items-center flex-md-row-reverse">
             <div class="col-md-4">
-                <img width="100" height="100" src="${urlImage}" class="" alt="...">
+                <img width="100" height="100" src="${urlImage}" class="float-end" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                 <h2>${title}</h2>
-                <p class="card-text overflow-auto text-muted">${resume.substring(0,250)}...</p>
+                <p class="card-text overflow-auto text-muted d-none d-md-block">${resume.substring(0,250)}...</p>
                 <ul class="list-inline">                    
                     <li class="list-inline-item text-muted">${date}</li>
                     <li class="list-inline-item text-muted">${timetoread}</li>
