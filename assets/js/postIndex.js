@@ -3,7 +3,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
     for(post in listpost) {
         let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
         template += `
-        <article class="card border-bottom-0 border-top-0">
+        <article class="card border-0">
             <div class="d-flex flex-row bd-highlight">
                 <div class="d-flex flex-row">
                     <img width="20" height="20"src="${urlImageAuthor}" alt="Autor Image"    class="rounded-pill">
@@ -12,11 +12,8 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     <h6>${author}</h6>
                 </div>
             </div>
-            <div class="row flex-row flex-md-row-reverse">
-            <div class="col-md-4">
-                <img src="${urlImage}" width="100px" height="100" class="" alt="...">
-            </div>
-            <div class="col-md-8">
+            <div class="row flex-row">
+            <div class="col-8">
                 <div class="card-body">
                 <h2>${title}</h2>
                 <p class="card-text overflow-auto text-muted">${resume.substring(0,250)}...</p>
@@ -25,14 +22,17 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     <li class="list-inline-item text-muted">${timetoread}</li>
                     <li class="list-inline-item bg rounded-pill p-2 text-muted">${tag}</li>
                     <li class="list-inline-item text-muted">Selected For You.</li>
-                    <button class="btn btn-outline-secondary border-0" style="background-color: white">
+                    <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
                         <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
                     </button>
-                    <button class="btn btn-outline-secondary border-0" style="background-color: white">
+                    <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
                         <img src="/images/SVG/more_horiz_black_24dp.svg" alt="">
                     </button>
                     </ul>
                 </div>
+            </div>
+            <div class="col-4">
+                <a href="article.html?idpost=${post}" style="background-image: url('${urlImage}');" class="img-post"></a>
             </div>
             </div>
         </article>
@@ -40,6 +40,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
     }
     $('.cards_list').html(template)
 })
+
 $('.back_button').click(() =>{
     location.replace('http://127.0.0.1:5500/')
 })
