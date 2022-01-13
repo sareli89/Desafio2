@@ -1,67 +1,76 @@
 // PATCH actualizar datos Fetch
-const updateUserFetch =  (objPost, idPost) => {
-    fetch(
-       // `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, 
-        {
-            method: 'PATCH',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(objPost)
-        }
-    ).then( (res)=> {
-        return res.json()
-    }).then ( (res) => {
-        console.log(res)
-        document.querySelector('#alert__response').classList.remove('d-none')
+// 
+let idPost = location.search.slice(8)
+$.ajax({
+    url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
+}).done((post) => {
+        // $('#title').val(post.title)
+        // $('#author').val(post.author)
+        // $('#timetoread').val(post.timetoread)
+        // $('#resume').val(post.resume)
+        $('#title').val('')
+        $('#resume').val('')
+        $('#urlImage').val('')
+        $('#author').val('')
+        $('#urlImageAuthor').val('')
+        $('#timetoread').val('')
+        $('#tag').val('')
+        $('#date').val('')
+
+})
+const updatePost = (upObject, idPost) => {
+    $.ajax({
+        method: 'PATCH',
+        url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`,
+        data: JSON.stringify(upObject)
+    }).done(() => {
+        $('#alert__response').removeClass('d-none')
     })
-
-
 }
+$('#update_post').click(() => {
+    let title = $('#title').val()
+    let resume = $('#resume').val()
+    let urlImage = $('#urlImage').val()
+    let author = $('#author').val()
+    let urlImageAuthor = $('#urlImageAuthor').val()
+    let timetoread = $('#timetoread').val()
+    let tag = $('#tag').val()
+    let date = $('#date').val()
 
+    if(title !== '' &&
+    resume !== '' &&
+    urlImage !== '' &&
+    author !== '' &&  
+    urlImageAuthor !== '' &&  
+    timetoread !== '' &&
+    tag !== '' &&
+    date !== ''
 
-let update__post = document.querySelector('#update__post')
-update__post.addEventListener('click', () => {
-
-    let title = document.querySelector('#title').value
-    let author = document.querySelector('#author').value
-    let timetoread = document.querySelector('#timetoread').value
-    let resume = document.querySelector('#resume').value
-
-    if(
-        title !== '' &&
-        author !== '' &&  
-        timetoread !== '' &&
-        resume !== ''
     ){
         let idPost = location.search.slice(8)
-        let postToUpdate = {
+        let upObject = {
             title: title,
+            resume: resume,
+            urlImage: urlImage,
             author: author,
+            urlImageAuthor: urlImageAuthor,
             timetoread: timetoread,
-            resume: resume
+            tag: tag,
+            date: date
+
         }
-    
-        // updateUser(postToUpdate, idPost )
-        updateUserFetch(postToUpdate, idPost )
+        updatePost(upObject, idPost)
     } else {
         alert('Algunos datos estan vacios')
     }
-
 })
-
-// DELETE eliminar post
-
-let delete__post = document.getElementById('delete__post')
-delete__post.addEventListener('click', () => {
+//Delete
+$('#delete_post').click( () => {
     let idPost = location.search.slice(8)
-    const xhttp = new XMLHttpRequest()
-    xhttp.open( "DELETE" , `https://genjs-292ac-default-rtdb.firebaseio.com/posts/${idPost}.json`, true)
-    xhttp.onload = function(data) {
-        if(data.target.status === 200){
-            location.replace('http://127.0.0.1:5500/')
-            // document.getElementById('alert__response').classList.remove('d-none')
-        }
-    }
-    xhttp.send() 
+    $.ajax({
+        method: 'DELETE',
+        url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
+    }).done(() => {
+        location.replace('http://127.0.0.1:5500/')
+    })
 })
