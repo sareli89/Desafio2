@@ -355,6 +355,28 @@ h1{
     text-align: center;
 }
 
+.twitter-btn{
+    width: 212px;
+    height: 41px;
+    margin-left: 52px;
+    background-color: #ffffff;
+    padding: 7px 16px 9px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 99em;
+    color: rgba(41, 41, 41, 1);
+    line-height: 20px;
+    font-size: 14px;
+    font-family: 'sohne';
+    font-weight: 400;
+    font-style: normal;
+    src: url('https://glyph.medium.com/font/b492c44/0-3j_4g_6bu_6c4_6c8_6c9_6cc_6cd_6ci_6cm/sohne-400-normal.woff') format('woff');
+    unicode-range: U+0-7F,U+A0,U+200A,U+2014,U+2018,U+2019,U+201C,U+201D,U+2022,U+2026;
+}
 .dropdown-menu{
     color: #757575;
     padding: 8px 20px;

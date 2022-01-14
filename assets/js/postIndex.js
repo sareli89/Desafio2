@@ -1,7 +1,10 @@
 $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) => {
     let template = ''
-    for(post in listpost) {
+    var postArray = Object.keys(listpost).reverse()
+
+    for(let post of postArray) {
         let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
+
         template += `
         <article class="card border-0">
             <div class="d-flex flex-row bd-highlight">
