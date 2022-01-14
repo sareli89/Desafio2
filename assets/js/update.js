@@ -13,6 +13,7 @@ $.ajax({
         $('#timetoread').val(post.timetoread)
         $('#tag').val(post.tag)
         $('#date').val(post.date)
+
 })
 const updatePost = (upObject, idPost) => {
     $.ajax({
@@ -21,6 +22,7 @@ const updatePost = (upObject, idPost) => {
         data: JSON.stringify(upObject)
     }).done(() => {
         $('#alert_response').removeClass('d-none')
+
     })
 }
 $('#update_post').click(() => {
@@ -31,7 +33,8 @@ $('#update_post').click(() => {
     let urlImageAuthor = $('#urlImageAuthor').val()
     let timetoread = $('#timetoread').val()
     let tag = $('#tag').val()
-    let date = $('#date').val()
+    
+
 
     if(title !== '' &&
     resume !== '' &&
@@ -39,8 +42,8 @@ $('#update_post').click(() => {
     author !== '' &&  
     urlImageAuthor !== '' &&  
     timetoread !== '' &&
-    tag !== '' &&
-    date !== ''
+    tag !== '' 
+
 
     ){
         let idPost = location.search.slice(8)
@@ -52,7 +55,8 @@ $('#update_post').click(() => {
             urlImageAuthor: urlImageAuthor,
             timetoread: timetoread,
             tag: tag,
-            date: date
+            date: new Date()
+
 
         }
         updatePost(upObject, idPost)
@@ -68,5 +72,6 @@ $('#delete_post').click( () => {
         url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
     }).done(() => {
         location.replace('/index.html')
+
     })
 })
