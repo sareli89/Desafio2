@@ -1,7 +1,10 @@
 $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) => {
     let template = ''
-    for(post in listpost) {
+    var postArray = Object.keys(listpost).reverse()
+
+    for(let post of postArray) {
         let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
+
         template += `
         <article class="card border-0">
             <div class="d-flex flex-row bd-highlight">
@@ -20,8 +23,8 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                 <ul class="list-inline">                    
                     <li class="list-inline-item text-muted">${date}</li>
                     <li class="list-inline-item text-muted">${timetoread}</li>
-                    <li class="list-inline-item bg rounded-pill p-2 text-muted">${tag}</li>
-                    <li class="list-inline-item text-muted">Selected For You.</li>
+                    <li class="list-inline-item rounded-pill p-2 text-muted">${tag}</li>
+                    <li class="list-inline-item text-muted bg-">Selected For You.</li>
                     <button class="btn btn-outline-secondary border-0" style="background-color: white"> 
                         <img src="/images/SVG/bookmark_border_black_24dp.svg" alt="">
                     </button>
@@ -32,7 +35,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                 </div>
             </div>
             <div class="col-4">
-                <a  href="article.html?idpost=${post}" style="background-image: url('${urlImage}');" class="img-post"></a>
+                <a href="article.html?idpost=${post}" style="background-image: url('${urlImage}');" class="img-post"></a>
             </div>
             </div>
         </article>

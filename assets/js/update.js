@@ -4,19 +4,15 @@ let idPost = location.search.slice(8)
 $.ajax({
     url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
 }).done((post) => {
-        // $('#title').val(post.title)
-        // $('#author').val(post.author)
-        // $('#timetoread').val(post.timetoread)
-        // $('#resume').val(post.resume)
-        $('#title').val('')
-        $('#resume').val('')
-        $('#urlImage').val('')
-        $('#author').val('')
-        $('#urlImageAuthor').val('')
-        $('#timetoread').val('')
-        $('#tag').val('')
-        $('#date').val('')
-
+    console.log(post)
+        $('#title').val(post.title)
+        $('#resume').val(post.resume)
+        $('#urlImage').val(post.urlImage)
+        $('#author').val(post.author)
+        $('#urlImageAuthor').val(post.urlImageAuthor)
+        $('#timetoread').val(post.timetoread)
+        $('#tag').val(post.tag)
+        $('#date').val(post.date)
 })
 const updatePost = (upObject, idPost) => {
     $.ajax({
@@ -24,7 +20,7 @@ const updatePost = (upObject, idPost) => {
         url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`,
         data: JSON.stringify(upObject)
     }).done(() => {
-        $('#alert__response').removeClass('d-none')
+        $('#alert_response').removeClass('d-none')
     })
 }
 $('#update_post').click(() => {
@@ -71,6 +67,6 @@ $('#delete_post').click( () => {
         method: 'DELETE',
         url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
     }).done(() => {
-        location.replace('http://127.0.0.1:5500/')
+        location.replace('/index.html')
     })
 })

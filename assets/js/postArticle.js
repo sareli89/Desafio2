@@ -21,7 +21,7 @@ $('#send_post').click(() => {
     let urlImageAuthor = $('#urlImageAuthor').val()
     let timetoread = $('#timetoread').val()
     let tag = $('#tag').val()
-    let date = $('#date').val()
+    // let date = $('#date').val()
         
     if(
         title !== '' &&
@@ -30,10 +30,10 @@ $('#send_post').click(() => {
         author !== '' &&  
         urlImageAuthor !== '' &&  
         timetoread !== '' &&
-        tag !== '' &&
-        date !== ''
+        tag !== '' 
+        // date !== ''
        
-        
+    
     ){
         let objPost = {
             title: title,
@@ -43,7 +43,7 @@ $('#send_post').click(() => {
             urlImageAuthor: urlImageAuthor,
             timetoread: timetoread,
             tag: tag,
-            date: date
+            date: new Date()       
         }
 
         createPost(objPost)

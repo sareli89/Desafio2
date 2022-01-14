@@ -39,6 +39,7 @@ $.ajax({
                    
                 </div>
         `
+    $('#update_post').html(`<a href="update.html?idpost=${idPost}">Edit</a>`)
     $('.title').html(`${post.title}`)
     $('.card_article').html(article)
 })
