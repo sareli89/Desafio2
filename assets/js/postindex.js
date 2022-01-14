@@ -4,11 +4,11 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
         let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
         template += `
         <article class="card border-0">
-            <div class="d-flex flex-row bd-highlight">
+            <div class="d-flex flex-row bd-highlight ms-3">
                 <div class="d-flex flex-row">
                     <img width="20" height="20"src="${urlImageAuthor}" alt="Autor Image"    class="rounded-pill">
                 </div>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row ms-2">
                     <h6>${author}</h6>
                 </div>
             </div>
@@ -16,7 +16,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
             <div class="col-8">
                 <div class="card-body">
                 <h2>${title}</h2>
-                <p class="card-text overflow-auto text-muted">${resume.substring(0,250)}...</p>
+                <p class="card-text overflow-auto text-muted">${resume.substring(0,110)}...</p>
                 <ul class="list-inline">                    
                     <li class="list-inline-item text-muted">${date}</li>
                     <li class="list-inline-item text-muted">${timetoread}</li>
@@ -31,7 +31,7 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
                     </ul>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-4 d-flex align-items-center">
                 <a href="article.html?idpost=${post}" style="background-image: url('${urlImage}');" class="img-post"></a>
             </div>
             </div>
