@@ -4,6 +4,7 @@ let idPost = location.search.slice(8)
 $.ajax({
     url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
 }).done((post) => {
+
     console.log(post)
         $('#title').val(post.title)
         $('#resume').val(post.resume)
@@ -21,8 +22,8 @@ const updatePost = (upObject, idPost) => {
         url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`,
         data: JSON.stringify(upObject)
     }).done(() => {
-        $('#alert_response').removeClass('d-none')
 
+        $('#alert_response').removeClass('d-none')
     })
 }
 $('#update_post').click(() => {
@@ -33,7 +34,6 @@ $('#update_post').click(() => {
     let urlImageAuthor = $('#urlImageAuthor').val()
     let timetoread = $('#timetoread').val()
     let tag = $('#tag').val()
-    
 
 
     if(title !== '' &&
@@ -71,6 +71,7 @@ $('#delete_post').click( () => {
         method: 'DELETE',
         url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
     }).done(() => {
+
         location.replace('/index.html')
 
     })
