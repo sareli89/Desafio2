@@ -11,7 +11,7 @@ $.ajax({
                     </div>
                     
                     <div class="row g-0">
-                        <div class="col-1 pt-4 ps-5">
+                        <div class="col-1">
                             <img src="${post.urlImageAuthor}" width="40" height="40" class="img-fluid rounded-circle author-img" alt="Author">
                         </div>
                         
