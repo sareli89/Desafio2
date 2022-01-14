@@ -18,8 +18,9 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
             <div class="row flex-row">
             <div class="col-8">
                 <div class="card-body">
-                <h2>${title}</h2>
-                <p class="card-text overflow-auto text-muted">${resume.substring(0,110)}...</p>
+                <a href="article.html?idpost=${post}" class="text-dark"><h2>${title}</h2></a>
+                <a href="article.html?idpost=${post}" class="text-dark"><p class="card-text overflow-auto text-muted d-none d-md-block">${resume.substring(0,110)}...</p></a>
+                
                 <ul class="list-inline">                    
                     <li class="list-inline-item text-muted">${date}</li>
                     <li class="list-inline-item text-muted">${timetoread}</li>

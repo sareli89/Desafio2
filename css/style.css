@@ -795,4 +795,9 @@ h1 {
     max-height: 134px;
   }
 }
+
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
 /*# sourceMappingURL=style.css.map */
