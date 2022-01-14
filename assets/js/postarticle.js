@@ -1,3 +1,9 @@
+var date = '2022-01-14T02:48:35.433Z'
+var dateNew = new Date(date)
+var months =  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+let month = dateNew.getMonth()
+let formatDate = months[month] +', '+ dateNew.getDate()
+
 const createPost = (objPost) => {
     $.post('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', JSON.stringify(objPost), (newPost) => {
         $('#title').val('')
@@ -31,9 +37,6 @@ $('#send_post').click(() => {
         urlImageAuthor !== '' &&  
         timetoread !== '' &&
         tag !== '' 
-        // date !== ''
-       
-    
     ){
         let objPost = {
             title: title,
@@ -43,7 +46,7 @@ $('#send_post').click(() => {
             urlImageAuthor: urlImageAuthor,
             timetoread: timetoread,
             tag: tag,
-            date: new Date()       
+            date: formatDate
         }
 
         createPost(objPost)
