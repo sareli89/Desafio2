@@ -1,3 +1,9 @@
+var date = '2022-01-14T02:48:35.433Z'
+var dateNew = new Date(date)
+var months =  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+let month = dateNew.getMonth()
+let formatDate = months[month] +', '+ dateNew.getDate()
+
 // PATCH actualizar datos Fetch
 // 
 let idPost = location.search.slice(8)
@@ -55,7 +61,7 @@ $('#update_post').click(() => {
             urlImageAuthor: urlImageAuthor,
             timetoread: timetoread,
             tag: tag,
-            date: new Date()
+            date: formatDate
 
 
         }
