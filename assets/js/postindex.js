@@ -46,5 +46,5 @@ $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) 
 })
 
 $('.back_button').click(() =>{
-    location.replace('http://127.0.0.1:5500/')
+    location.replace('/')
 })
