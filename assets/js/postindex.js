@@ -1,19 +1,14 @@
-// $.get('https://postsmedium-default-rtdb.firebaseio.com/posts/.json', (listpost) => {
-//     let template = ''
-//     var postArray = Object.keys(listpost).reverse()
-
 fetch('http://localhost:8080/articles', {
     method: 'GET',
 })
 .then(response => response.json())
 .then(json => {
     const articles = json.articles
-    console.log(articles)
-    // const content = document.getElementById('content')
+       
     let template = ''
 
     articles.forEach(article => {
-        // content.append(
+        
         let htmlTemplate = `
         <article class="card border-0">
             <div class="d-flex flex-row bd-highlight ms-3">
@@ -58,13 +53,13 @@ fetch('http://localhost:8080/articles', {
 .catch(error => {
     console.error('Get posts error: ', error)
 })
-    // for(let post of postArray) {
-    //     let {title, author, resume, timetoread, date, tag, urlImageAuthor, urlImage} = listpost[post]
 
-//     }
-//     $('.cards_list').html(template)
-// })
-
+$('#newpost').click(() => {
+    location.replace('newPost.html')
+})
+$('#login').click(() => {
+    location.replace('login.html')
+})
 $('.back_button').click(() =>{
     location.replace('http://127.0.0.1:5500/')
 })

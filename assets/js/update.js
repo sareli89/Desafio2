@@ -1,84 +1,109 @@
-var date = '2022-01-14T02:48:35.433Z'
-var dateNew = new Date(date)
-var months =  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-let month = dateNew.getMonth()
-let formatDate = months[month] +', '+ dateNew.getDate()
+const token = localStorage.getItem('token')
+// var date = '2022-01-14T02:48:35.433Z'
+// var dateNew = new Date(date)
+// var months =  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+// let month = dateNew.getMonth()
+// let formatDate = months[month] +', '+ dateNew.getDate()
 
 // PATCH actualizar datos Fetch
 // 
 let idPost = location.search.slice(8)
-$.ajax({
-    url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
-}).done((post) => {
 
-    console.log(post)
-        $('#title').val(post.title)
-        $('#resume').val(post.resume)
-        $('#urlImage').val(post.urlImage)
-        $('#author').val(post.author)
-        $('#urlImageAuthor').val(post.urlImageAuthor)
-        $('#timetoread').val(post.timetoread)
-        $('#tag').val(post.tag)
-        $('#date').val(post.date)
+fetch(`http://localhost:8080/articles/${idPost}`, {
+    method: 'GET'
+})
+.then(response => response.json())
+.then(json => {
+    const article = json.article
+
+    console.log(article)
+        $('#title').val(article.title)
+        $('#resume').val(article.resume)
+        $('#urlImage').val(article.urlImage)
+        $('#author').val(article.author)
+        $('#urlImageAuthor').val(article.urlImageAuthor)
+        $('#timetoread').val(article.timetoread)
+        $('#tag').val(article.tag)
+        $('#date').val(article.date)
 
 })
-const updatePost = (upObject, idPost) => {
-    $.ajax({
-        method: 'PATCH',
-        url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`,
-        data: JSON.stringify(upObject)
-    }).done(() => {
 
-        $('#alert_response').removeClass('d-none')
-    })
-}
+
+
 $('#update_post').click(() => {
-    let title = $('#title').val()
-    let resume = $('#resume').val()
-    let urlImage = $('#urlImage').val()
-    let author = $('#author').val()
-    let urlImageAuthor = $('#urlImageAuthor').val()
-    let timetoread = $('#timetoread').val()
-    let tag = $('#tag').val()
-
-
-    if(title !== '' &&
-    resume !== '' &&
-    urlImage !== '' &&
-    author !== '' &&  
-    urlImageAuthor !== '' &&  
-    timetoread !== '' &&
-    tag !== '' 
-
-
-    ){
-        let idPost = location.search.slice(8)
-        let upObject = {
-            title: title,
-            resume: resume,
-            urlImage: urlImage,
-            author: author,
-            urlImageAuthor: urlImageAuthor,
-            timetoread: timetoread,
-            tag: tag,
-            date: formatDate
-
-
-        }
-        updatePost(upObject, idPost)
-    } else {
-        alert('Algunos datos estan vacios')
+    if(token == null) {
+        alert('No estas logueado')
+        location.replace('login.html')
+        return
     }
+
+    let newTitulo = document.querySelector('#title').value    
+    let newResume = document.querySelector('#resume').value 
+    let newUrlImage = document.querySelector('#urlImage').value
+    let newAuthor = document.querySelector('#author').value    
+    let newUrlImgAutor = document.querySelector('#urlImageAuthor').value    
+    let newTimetoRead = document.querySelector('#timetoread').value
+    let newTag = document.querySelector('#tag').value
+    let newDate = document.querySelector('#date').value
+
+    // if(
+    //     newTitulo != '' &&
+    //     newAbstract != '' &&
+    //     newAutor != '' &&        
+    //     newTiempoLectura != '' &&
+    //     newImagenPost != '' &&
+    //     newContenidoPost != ''
+    //  ){
+    let newPostUpdate = {
+        title: newTitulo,
+        resume: newResume,
+        urlImage: newUrlImage,       
+        author: newAuthor,
+        urlImageAuthor: newUrlImgAutor,
+        timetoread: newTimetoRead,
+        tag: newTag,
+        date: newDate
+    }
+
+
+    fetch(`http://localhost:8080/articles/${idPost}`, {
+        method: 'PATCH',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(newPostUpdate)
+})
+.then((response) => {
+    if(response.ok == false) {
+    alert('Sesión expirada')
+    location.replace('login.html')
+    return
+    }
+    location.replace('index.html')
+   
+})
+.catch(error => console.error('Error de actualización: ', error))
+
+
+    
 })
 //Delete
-$('#delete_post').click( () => {
+$('#delete_post').click(() => {
     let idPost = location.search.slice(8)
-    $.ajax({
+    fetch(`http://localhost:8080/articles/${idPost}`, {
         method: 'DELETE',
-        url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
-    }).done(() => {
-
-        location.replace('/index.html')
-
+        headers: {
+            Authorization: `Bearer ${token}`
+        } 
     })
+    .then((response) => {
+        if(response.ok == false) {
+            alert('Sesión expirada')
+            location.replace('login.html')
+            return
+            }
+            location.replace('index.html')
+    })
+    .catch(error => console.error('Delete Article: ', error))
 })

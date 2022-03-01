@@ -1,22 +1,13 @@
 let idPost = location.search.slice(8)
-// $.ajax({
-//     url: `https://postsmedium-default-rtdb.firebaseio.com/posts/${idPost}.json`
-// }).done((post) => {
-//         let article = ''
-//         article += `
+
 fetch(`http://localhost:8080/articles/${idPost}`, {
     method: 'GET',
 })
 .then(response => response.json())
 .then(json => {
     const article = json.article
-    console.log(article)
-    
-    let template = ''
-    console.log(template)
-    article.forEach(article => {
-        // content.append(
-        let htmlTemplate = `
+        
+    let template = `
         <div class="card border-0 mb-3">
                     <h1 class="mt-5 mb-3 title">${article.title}</h1>
                     <div class="col col-md-8">
@@ -51,15 +42,11 @@ fetch(`http://localhost:8080/articles/${idPost}`, {
                     <p class="mb-5 justify-text">${article.resume}</p>
                 </div>
         `
-        template += htmlTemplate
-    })
     
-
-    document.getElementById('card_article').innerHTML = template
-    
+        
     $('#update_post').html(`<a href="update.html?idpost=${idPost}" class="text-white">Edit</a>`)
     $('.title').html(`${article.title}`)
-    $('#card_article').html(article)
+    $('.card_article').html(template)
 })
 .catch(error => {
     console.error('Get article error: ', error)
